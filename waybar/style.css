@@ -1,0 +1,236 @@
+* {
+  border-bottom: 0px white solid;
+  border-radius: 0px;
+  /* `ttf-font-awesome` is required to be installed for icons */
+  /* font-family: "Roboto Mono Medium", Helvetica, Arial, sans-serif; */
+  font-family: Helvetica;
+  font-weight: normal;
+
+  /* adjust font-size value to your liking: */
+  font-size: 14px;
+
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(10, 10, 10, 0.6);
+  color: #ffffff;
+  border-bottom: 2px darkcyan solid;
+}
+
+/*
+#workspaces-pill {
+  background: rgba(30, 30, 46, 0.6);
+  background: rgba(30, 30, 30, 0.0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 2px 5px;
+  margin: 5px;
+  margin-top: 3px;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+#workspaces button {
+  font-size: 6px;
+  padding: 0 6px;
+  margin: 3px 0px;
+  border-radius: 50px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+*/
+
+#workspaces button {
+  color: #ffffff;
+  box-shadow: inset 0 -3px transparent;
+}
+
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.focused {
+  background-color: #64727d;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#workspaces button.active {
+  background-color: rgba(100, 100, 100, 0.5);
+  border-bottom: 2px #00cccc solid;
+}
+
+/*
+#window {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 2px #00cccc solid;
+}
+*/
+
+#mode {
+  background-color: #64727d;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+  padding: 0 10px;
+  margin: 6px 3px;
+  color: #000000;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#clock {
+  color: white;
+}
+
+#battery {
+  color: white;
+}
+
+#battery.charging {
+  color: #ffffff;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  color: #ffffff;
+}
+
+#memory {
+  color: white;
+}
+
+#backlight {
+  background-color: #000000;
+  color: white;
+}
+
+#network {
+  color: white;
+}
+
+#network.disconnected {
+  background-color: #f53c3c;
+}
+
+#pulseaudio {
+  color: #ffffff;
+}
+
+#pulseaudio.muted {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#custom-media {
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+  background-color: #ffa000;
+}
+
+#temperature {
+  background-color: #f0932b;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#tray {
+  background-color: #2980b9;
+}
+
+#idle_inhibitor {
+  background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#mpd {
+  background-color: #66cc99;
+  color: #2a5c45;
+}
+
+#mpd.disconnected {
+  background-color: #f53c3c;
+}
+
+#mpd.stopped {
+  background-color: #90b1b1;
+}
+
+#mpd.paused {
+  background-color: #51a37a;
+}
+
+#language {
+  background: #bbccdd;
+  color: #333333;
+  padding: 0 5px;
+  margin: 6px 3px;
+  min-width: 16px;
+}
